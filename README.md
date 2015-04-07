@@ -151,7 +151,7 @@ CSS重置样式：
         </div>
     </div>
 
-## 弹出款效果
+## 弹出框效果
 
 ### createWindow.css
 
