@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="maximum-dpr=2" name="flexible" />
+    <title>弹窗效果</title>
+    <script src="../global/base.js"></script>
+    <script src="../global/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../global/reset.css">
+    <link rel="stylesheet" type="text/css" href="./createWindow.css">
+    <style type="text/css">
+        #container{
+            height: 10rem;
+            position: relative;
+        }
+        .window{
+            position: absolute;
+            display: none;
+            width: 7rem;
+            height: 5rem;
+            left: 1.5rem;
+            top: 5rem;
+            z-index: 100;
+            border: 0.1rem solid #f8b62c;
+        }
+        .window h2{
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+        .window .sure{
+            position: absolute;
+            bottom: 0;
+            width: 99%;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.6rem;
+            text-align: center;
+            color:#fff;
+            background-color: #f8b62c;
+            border: 0.1rem solid #f8b62c;
+        }
+        .showbounce,.showsquare,.showspin,.showslide,.showdrop,.showslit{
+            position: absolute;
+            width: 49%;
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+            font-size: 0.6rem;
+            border: 0.1rem solid #f8b62c;
+        }
+        .showsquare,.showslide{
+            top: 1.2rem;
+        }
+        .showspin,.showslide,.showslit{
+            right: 0;
+        }
+        .showdrop,.showslit{
+            top: 2.2rem;
+        }
+        .md-content{
+          position: absolute;
+          width: 7rem;
+          height: 5rem;
+          top: 5rem;
+          left: 1.5rem;
+          border:0.1rem solid #f8b62c;
+        }
+        .md-content h2{
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+        .md-content .md-close{
+            position: absolute;
+            bottom: 0;
+            width: 99%;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.6rem;
+            text-align: center;
+            color:#fff;
+            background-color: #f8b62c;
+            border: 0.1rem solid #f8b62c;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <div class="showbounce">弹出bounce</div>
+        <div class="showspin">弹出旋转框</div>
+        <div class="showsquare">弹出翻转层</div>
+        <div class="showslide">右侧slide框</div>
+        <div class="showdrop">上面drop弹窗</div>
+        <div class="showslit">3d展开框</div>
+
+        <div class="bounce">
+            <div class="window">
+                <h2>我是弹出层</h2>
+                <div class="sure">确定</div>
+            </div>
+        </div>
+
+        <div class="flip">
+            <div class="md-modal">
+                <div class="md-content">
+                    <h2>我是弹出框</h2>
+                    <div class="md-close">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spin">
+            <div class="md-modal">
+                <div class="md-content">
+                    <h2>我是弹出框</h2>
+                    <div class="md-close">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="md-modal">
+                <div class="md-content">
+                    <h2>我是弹出框</h2>
+                    <div class="md-close">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="drop">
+            <div class="md-modal">
+                <div class="md-content">
+                    <h2>我是弹出框</h2>
+                    <div class="md-close">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slit">
+            <div class="md-modal">
+                <div class="md-content">
+                    <h2>我是弹出框</h2>
+                    <div class="md-close">确定</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script type="text/javascript">
+     //bounce层操作
+     $('.showbounce').on('click',function(e){
+       // alert('click');
+        $('.window').addClass('bounce').show();
+     });
+
+     //翻转层操作
+     $('.showsquare').on('click',function(e){
+       // alert('click');
+        $('.flip .md-modal').addClass('md-show');
+     });
+
+     $('.showspin').on('click',function(e){
+       // alert('click');
+        $('.spin .md-modal').addClass('md-show');
+     });
+
+     $('.showslide').on('click',function(e){
+       // alert('click');
+        $('.slide .md-modal').addClass('md-show');
+     });
+
+     $('.showdrop').on('click',function(e){
+       // alert('click');
+        $('.drop .md-modal').addClass('md-show');
+     });
+
+     $('.showslit').on('click',function(e){
+       // alert('click');
+        $('.slit .md-modal').addClass('md-show');
+     });
+
+
+     //确定关闭弹出框
+     $('.sure').on('click',function(e){
+        $('.window').hide();
+     })
+     $('.md-close').on('click',function(e){
+        $('.md-modal').removeClass('md-show');
+     });
+
+</script>
+</body>
+</html>
+
+
+
+
+
