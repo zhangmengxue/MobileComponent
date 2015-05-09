@@ -6,7 +6,7 @@
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta content="telephone=no,email=no" name="format-detection" />
     <meta content="maximum-dpr=2" name="flexible" />
-    <title>bounce弹窗</title>
+    <title>drop弹窗</title>
     <script src="../global/base.js"></script>
     <script src="../global/zepto.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../global/reset.css">
@@ -32,8 +32,7 @@
         li{
             margin:0.27rem auto;
         }
-        .window{
-            display: none;
+        .md-modal{
             position: absolute;
             left: 50%;
             margin-left: -2.7rem;
@@ -56,7 +55,7 @@
 </head>
 <body>
     <div id="container">
-        <h2>bounce弹窗</h2>
+        <h2>drop弹窗</h2>
         <ul>
             <li><img src="../images/block1.png"></li>
             <li><img src="../images/block2.png"></li>
@@ -66,10 +65,12 @@
             <li><img src="../images/block6.png"></li>
         </ul>
 
-        <div class="bounce">
+        <div class="drop">
             <div class="mask"></div>
-            <div class="window">
-                <img src="../images/window.png" >
+            <div class="md-modal">
+                <div class="md-content">
+                    <img src="../images/window.png" >
+                </div>
             </div>
         </div>
 
@@ -77,20 +78,15 @@
 <script type="text/javascript">
      //bounce层操作
      $('li').on('tap',function(e){
-        $('.window').addClass('bounce').show();
+        $('.md-modal').addClass('md-show');
         $('.mask').show();
      });
 
-     $('.window').on('tap',function(){
-        $(this).hide();
+     $('.md-modal').on('tap',function(){
+        $(this).removeClass('md-show');
         $('.mask').hide();
      });
 
 </script>
 </body>
 </html>
-
-
-
-
-

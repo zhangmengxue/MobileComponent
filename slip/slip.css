@@ -1,0 +1,17 @@
+body{
+    overflow-x: hidden;
+}
+.right .main{
+	transition: left 0.5s;
+	-webkit-transition: left 0.5s;
+}
+.slip-right{
+	left: 8.75rem;
+}
+
+.perspective .main{
+
+}
+.slip-perspective{
+	
+}

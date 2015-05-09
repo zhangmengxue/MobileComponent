@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="maximum-dpr=2" name="flexible" />
+    <title>right侧滑</title>
+    <script src="../global/base.js"></script>
+    <script src="../global/zepto.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../global/reset.css">
+    <style type="text/css">
+        .background{
+            width: 100%;
+            height: 20rem;
+            background-color: #9c9c9c;
+            overflow: hidden;
+        }
+        .bg{
+            margin-top:3rem;
+        }
+        .main{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+        }
+        .main h2{
+            background-color: #f8b62c;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: 0.5rem;
+            text-align: center;
+            border-bottom: 2px solid #434343;
+        }
+        .main .button{
+            position: absolute;
+            top:0.5rem;
+            left: 0.27rem;
+            width: 0.72rem;
+            height: 0.72rem;
+        }
+        .main ul{
+            width: 9.5rem;
+            margin:  0 auto;
+        }
+        .main li{
+            margin: 0.27rem auto; 
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="./slip.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="bg"><img src="../images/bg.png"></div>
+    </div>
+    <div class="right">
+        <div class="main">
+            <h2>right侧滑</h2>
+            <div class="button"><img src="../images/button.png"></div>
+            <ul>
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript">
+        $('.button').on('tap',function(e){
+            //alert('tap');
+            $('.main').addClass('slip-right');
+        });
+        $('ul').on('tap',function(e){
+            $('.main').removeClass('slip-right');
+        });
+    </script>
+</body>
+</html>
+

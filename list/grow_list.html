@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="maximum-dpr=2" name="flexible" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>grow_list列表</title>
+    <script src="../global/base.js"></script>
+    <link rel="stylesheet" type="text/css" href="../global/reset.css">
+    <link rel="stylesheet" type="text/css" href="./list.css">
+    <style type="text/css">
+        h2{
+            width: 100%;
+            height: 1.5rem;
+            background-color: #f8b62c;
+            border-bottom: 1px solid #434343;
+            font-size: 0.5rem;
+            text-align: center; 
+            line-height: 1.5rem; 
+            color: #434343; 
+
+        }
+
+        ul{
+            position: relative;
+            margin: 0 auto;
+            width: 9.5rem;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            list-style: none;
+
+            -webkit-perspective: 400px;
+               -moz-perspective: 400px;
+                -ms-perspective: 400px;
+                 -o-perspective: 400px;
+                    perspective: 400px;
+        }
+        li{
+            position: relative;
+            margin:0.27rem auto;
+            z-index: 2;
+
+            -webkit-transform: translateZ(0px);
+               -moz-transform: translateZ(0px);
+                -ms-transform: translateZ(0px);
+                 -o-transform: translateZ(0px);
+                    transform: translateZ(0px);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <article>
+            <h2>列表效果</h2>
+            <ul class="grow">
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+                <li><img src="../images/block1.png"></li>
+                <li><img src="../images/block2.png"></li>
+                <li><img src="../images/block3.png"></li>
+                <li><img src="../images/block4.png"></li>
+                <li><img src="../images/block5.png"></li>
+                <li><img src="../images/block6.png"></li>
+            </ul>
+        </article>
+    </div>
+    <script type="text/javascript" src="./list.js"></script>
+    <script type="text/javascript">
+         stroll.bind( 'ul' );
+    </script>
+</body>
+</html>
+
