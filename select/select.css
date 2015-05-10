@@ -1,0 +1,1241 @@
+/* Default custom select styles */
+div.cs-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	background: #fff;
+	z-index: 100;
+	width: 100%;
+	max-width: 600px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.cs-select:focus {
+	outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+.cs-select select {
+	display: none;
+}
+
+.cs-select span {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding: 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+.cs-select > span {
+	padding-right: 3em;
+}
+
+.cs-select > span::after,
+.cs-select .cs-selected span::after {
+	speak: none;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cs-select > span::after {
+	content: '\25BE';
+	right: 1em;
+}
+
+.cs-select .cs-selected span::after {
+	content: '\2713';
+	margin-left: 1em;
+}
+
+.cs-select.cs-active > span::after {
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
+}
+
+div.cs-active {
+	z-index: 200;
+}
+
+/* Options */
+.cs-select .cs-options {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	background: #fff;
+	visibility: hidden;
+}
+
+.cs-select.cs-active .cs-options {
+	visibility: visible;
+}
+
+.cs-select ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.cs-select ul span {
+	padding: 1em;
+}
+
+.cs-select ul li.cs-focus span {
+	background-color: #ddd;
+}
+
+/* Optgroup and optgroup label */
+.cs-select li.cs-optgroup ul {
+	padding-left: 1em;
+}
+
+.cs-select li.cs-optgroup > span {
+	cursor: default;
+}
+
+/* Default custom select styles  end*/
+
+
+
+/*border type style start*/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?-rdnm34');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix-rdnm34') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?-rdnm34') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?-rdnm34') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?-rdnm34#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.cs-skin-border {
+	background: transparent;
+	font-size: 2em;
+	font-weight: 700;
+	max-width: 600px;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-border { font-size: 1em; }
+}
+
+.cs-skin-border > span {
+	border: 5px solid #000;
+	border-color: inherit;
+	-webkit-transition: background 0.2s, border-color 0.2s;
+	transition: background 0.2s, border-color 0.2s;
+}
+
+.cs-skin-border > span::after,
+.cs-skin-border .cs-selected span::after {
+	font-family: 'icomoon';
+	content: '\e000';
+}
+
+.cs-skin-border ul span::after {
+	content: '';
+	opacity: 0;
+}
+
+.cs-skin-border .cs-selected span::after {
+	content: '\e00e';
+	color: #ddd9c9;
+	font-size: 1.5em;
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.cs-skin-border.cs-active > span {
+	background: #fff;
+	border-color: #fff;
+	color: #f8b62c;
+}
+
+.cs-skin-border .cs-options {
+	color: #f8b62c;
+	font-size: 0.75em;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, visibility 0s 0.2s;
+	transition: opacity 0.2s, visibility 0s 0.2s;
+}
+
+.cs-skin-border.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.cs-skin-border ul span {
+	padding: 1em 2em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-border .cs-options li span:hover,
+.cs-skin-border li.cs-focus span {
+	background: #f5f3ec;
+}
+
+/*border type style end*/
+
+
+/*elastic slide style start*/
+
+div.cs-skin-underline {
+	background: transparent;
+	font-size: 1.8em;
+	max-width: 600px;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-underline { font-size: 1.2em; }
+}
+
+.cs-skin-underline > span {
+	padding: 0.5em 3em 0.5em 0.5em;
+	border-bottom: 3px solid #000;
+	border-color: inherit;
+	font-weight: bold;
+}
+
+.cs-skin-underline > span::after {
+	font-family: 'icomoon';
+	content: '\e003';
+	right: 0.25em;
+	-webkit-transform: translate3d(0,-50%,0) rotate3d(0,0,1,45deg);
+	transform: translate3d(0,-50%,0) rotate3d(0,0,1,45deg);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.cs-skin-underline.cs-active > span::after {
+	-webkit-transform: translate3d(0,-50%,0) rotate3d(0,0,1,270deg);
+	transform: translate3d(0,-50%,0) rotate3d(0,0,1,270deg);
+}
+
+.cs-skin-underline .cs-options {
+	background: #eee;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.4s, visibility 0s 0.7s;
+	transition: opacity 0.3s 0.4s, visibility 0s 0.7s;
+}
+
+.cs-skin-underline.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.cs-skin-underline ul span {
+	position: relative;
+	text-transform: uppercase;
+	font-size: 66%;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 1.2em 0.8em;
+	opacity: 0;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.cs-select ul span::after {
+	content: '';
+	opacity: 0;
+}
+
+.cs-select .cs-selected span::after {
+	font-family: 'icomoon';
+	content: '\e010';
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0.7s;
+	transition: opacity 0.3s 0.7s;
+}
+
+.cs-skin-underline ul span::before {
+	content: '';
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: #fff;
+	-webkit-transform: translate3d(200%,0,0);
+	transform: translate3d(200%,0,0);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-underline.cs-active ul span,
+.cs-skin-underline.cs-active ul span::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.cs-skin-underline li:nth-child(5) span,
+.cs-skin-underline li:nth-child(5) span::before,
+.cs-skin-underline.cs-active li:first-child span,
+.cs-skin-underline.cs-active li:first-child span::before {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.cs-skin-underline li:nth-child(4) span,
+.cs-skin-underline li:nth-child(4) span::before,
+.cs-skin-underline.cs-active li:nth-child(2) span,
+.cs-skin-underline.cs-active li:nth-child(2) span::before {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-underline li:nth-child(3) span,
+.cs-skin-underline li:nth-child(3) span::before {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-underline li:nth-child(2) span,
+.cs-skin-underline li:nth-child(2) span::before,
+.cs-skin-underline.cs-active li:nth-child(4) span,
+.cs-skin-underline.cs-active li:nth-child(4) span::before {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-underline li:first-child span,
+.cs-skin-underline li:first-child span::before,
+.cs-skin-underline.cs-active li:nth-child(5) span,
+.cs-skin-underline.cs-active li:nth-child(5) span::before {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+} /* more items require more delay declarations */
+
+.cs-skin-underline .cs-options li span:hover,
+.cs-skin-underline .cs-options li.cs-focus span,
+.cs-skin-underline li.cs-selected span {
+	color: #f8b62c;
+	background: transparent;
+}
+/*elastic slide style end*/   
+
+
+/*bounce style start*/
+
+div.cs-skin-elastic {
+	background: transparent;
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #5b8583;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-elastic { font-size: 1em; }
+}
+
+.cs-skin-elastic > span {
+	background-color: #fff;
+	z-index: 100;
+}
+
+.cs-skin-elastic > span::after {
+	font-family: 'icomoon';
+	content: '\e005';
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-elastic .cs-options {
+	overflow: visible;
+	background: transparent;
+	opacity: 1;
+	visibility: visible;
+	padding-bottom: 1.25em;
+	pointer-events: none;
+}
+
+.cs-skin-elastic.cs-active .cs-options {
+	pointer-events: auto;
+}
+
+.cs-skin-elastic .cs-options > ul::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	-webkit-transform: scale3d(1,0,1);
+	transform: scale3d(1,0,1);
+	background: #fff;
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-elastic.cs-active .cs-options > ul::before {
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	-webkit-transition: none;
+	transition: none;
+	-webkit-animation: expand 0.6s ease-out;
+  	animation: expand 0.6s ease-out;
+}
+
+.cs-skin-elastic .cs-options ul li {
+	opacity: 0;
+	-webkit-transform: translate3d(0,-25px,0);
+	transform: translate3d(0,-25px,0);
+	-webkit-transition: opacity 0.15s, -webkit-transform 0.15s;
+	transition: opacity 0.15s, transform 0.15s;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	opacity: 1;
+	-webkit-transition: none;
+	transition: none;
+	-webkit-animation: bounce 0.6s ease-out;
+  	animation: bounce 0.6s ease-out;
+}
+
+.cs-skin-elastic .cs-options span {
+	background-repeat: no-repeat;
+	background-position: 1.5em 50%;
+	background-size: 2em auto;
+	padding: 0.8em 1em 0.8em 1em;
+}
+
+.cs-skin-elastic .cs-options span:hover,
+.cs-skin-elastic .cs-options li.cs-focus span,
+.cs-skin-elastic .cs-options .cs-selected span {
+	color: #1e4c4a;
+}
+
+.cs-skin-elastic .cs-options .cs-selected span::after {
+	content: '';
+}
+
+
+@-webkit-keyframes expand { 
+	0% { -webkit-transform: scale3d(1,0,1); }
+	25% { -webkit-transform: scale3d(1,1.2,1); }
+	50% { -webkit-transform: scale3d(1,0.85,1); }
+	75% { -webkit-transform: scale3d(1,1.05,1) }
+	100% { -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes expand { 
+	0% { -webkit-transform: scale3d(1,0,1); transform: scale3d(1,0,1); }
+	25% { -webkit-transform: scale3d(1,1.2,1); transform: scale3d(1,1.2,1); }
+	50% { -webkit-transform: scale3d(1,0.85,1); transform: scale3d(1,0.85,1); }
+	75% { -webkit-transform: scale3d(1,1.05,1); transform: scale3d(1,1.05,1); }
+	100% { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+
+@-webkit-keyframes bounce { 
+	0% { -webkit-transform: translate3d(0,-25px,0); opacity:0; }
+	25% { -webkit-transform: translate3d(0,10px,0); }
+	50% { -webkit-transform: translate3d(0,-6px,0); }
+	75% { -webkit-transform: translate3d(0,2px,0); }
+	100% { -webkit-transform: translate3d(0,0,0); opacity: 1; }
+}
+
+@keyframes bounce { 
+	0% { -webkit-transform: translate3d(0,-25px,0); transform: translate3d(0,-25px,0); opacity:0; }
+	25% { -webkit-transform: translate3d(0,10px,0); transform: translate3d(0,10px,0); }
+	50% { -webkit-transform: translate3d(0,-6px,0); transform: translate3d(0,-6px,0); }
+	75% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0); }
+	100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); opacity: 1; }
+}
+
+/*bounce style end*/
+
+
+
+/*slide style start*/
+
+div.cs-skin-slide {
+	color: #fff;
+	font-size: 1.5em;
+	width: 300px;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-slide { font-size: 1em; width: 250px; }
+}
+
+div.cs-skin-slide::before {
+	content: '';
+	background: #ffffff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-slide.cs-active::before {
+	-webkit-transform: scale3d(1.1,3.5,1);
+	transform: scale3d(1.1,3.5,1);
+}
+
+.cs-skin-slide > span {
+	height: 80px;
+	line-height: 80px;
+	-webkit-transition: text-indent 0.3s, opacity 0.3s;
+	transition: text-indent 0.3s, opacity 0.3s;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-slide > span { height: 60px; line-height: 28px; }
+}
+
+.cs-skin-slide.cs-active > span {
+	text-indent: -290px;
+	opacity: 0;
+}
+
+.cs-skin-slide > span::after,
+.cs-skin-slide.cs-active > span::after {
+	font-family: 'icomoon';
+	content: '\e00f';
+	color: #eb7e7f;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-slide.cs-active > span::after {
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.cs-skin-slide .cs-options {
+	background: transparent;
+	width: 70%;
+	height: 400%;
+	padding: 1.9em 0;
+	top: 3rem;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-slide .cs-options { padding-top: 3em; }
+}
+
+.cs-skin-slide .cs-options li {
+	opacity: 0;
+	-webkit-transform: translate3d(30%,0,0);
+	transform: translate3d(30%,0,0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.cs-skin-slide.cs-active .cs-options li {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	opacity: 1;
+}
+
+.cs-skin-slide.cs-active .cs-options li:first-child {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(2) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(3) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(4) {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(5) {
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+} /* more options need more delay declaration */
+
+.cs-skin-slide .cs-options li span {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-size: 85%;
+	padding: 0.8em 1em 0.8em 2.5em;
+}
+
+.cs-skin-slide .cs-options li span:hover,
+.cs-skin-slide .cs-options li.cs-focus span,
+.cs-skin-slide .cs-options li.cs-selected span {
+	color: #eb7e7f;
+	background: transparent;
+}
+
+.cs-skin-slide .cs-selected span::after {
+	content: '';
+}
+
+[class^="icon-"] span:before,
+[class*=" icon-"] span:before {
+	font-family: 'icomoon';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+	font-size: 1.5em;
+}
+
+.icon-camera span::before {
+	content: '\e00b';
+}
+
+.icon-money span::before {
+	content: '\e008';
+}
+
+.icon-heart span::before {
+	content: '\e00a';
+}
+
+.icon-food span::before {
+	content: '\e009';
+}
+
+.icon-shirt span::before {
+	content: '\e00c';
+}
+/*slide style end*/
+
+
+/*rotate style start*/
+div.cs-skin-rotate {
+	background: transparent;
+	font-size: 1.5em;
+	font-weight: 700;
+	width: 300px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-rotate { font-size: 1em; width: 200px; }
+}
+
+.cs-skin-rotate > span,
+.cs-skin-rotate .cs-options li {
+	background: transparent;
+	-webkit-transform-origin: 50% 50% -200px;
+	transform-origin: 50% 50% -200px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-rotate > span,
+	.cs-skin-rotate .cs-options li {
+		-webkit-transform-origin: 50% 50% -100px;
+		transform-origin: 50% 50% -100px;
+	}
+}
+
+.cs-skin-rotate > span {
+	border: 1px dashed #ffffff;
+}
+
+.cs-skin-rotate.cs-active > span {
+	opacity: 0;
+	-webkit-transform: rotate3d(0,1,0,-90deg);
+	transform: rotate3d(0,1,0,-90deg);
+}
+
+.cs-skin-rotate > span::after,
+.cs-skin-rotate .cs-selected span::after {
+	font-family: 'icomoon';
+}
+
+.cs-skin-rotate > span::after,
+.cs-skin-rotate.cs-active > span::after {
+	content: '\e012';
+	-webkit-transform: translate3d(0,-50%,0) rotate3d(0,0,1,-90deg);
+	transform: translate3d(0,-50%,0) rotate3d(0,0,1,-90deg);
+}
+
+.cs-skin-rotate ul span::after {
+	content: '';
+	opacity: 0;
+}
+
+.cs-skin-rotate .cs-selected span::after {
+	content: '\e00e';
+	font-size: 1.5em;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.cs-skin-rotate .cs-options {
+	background: transparent;
+	top: 0;
+	overflow: visible;
+	visibility: visible;
+	pointer-events: none;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.cs-skin-rotate .cs-options ul {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.cs-skin-rotate .cs-options li {
+	opacity: 0;
+	-webkit-transform: rotate3d(0,1,0,90deg);
+	transform: rotate3d(0,1,0,90deg);
+}
+
+.cs-skin-rotate.cs-active .cs-options li {
+	opacity: 1;
+	-webkit-transform: rotate3d(0,1,0,0deg);
+	transform: rotate3d(0,1,0,0deg);
+	pointer-events: auto;
+}
+
+.cs-skin-rotate .cs-options li:nth-child(2) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-rotate .cs-options li:nth-child(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-rotate .cs-options li:nth-child(4) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-rotate .cs-options li:nth-child(5) {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+
+.cs-skin-rotate.cs-active .cs-options ul li {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.cs-skin-rotate .cs-options li span {
+	padding: 1em 0;
+}
+
+.cs-skin-rotate .cs-options li span:hover,
+.cs-skin-rotate .cs-options li.cs-focus span,
+.cs-skin-rotate .cs-selected span {
+	opacity: 0.8;
+	background: transparent;
+}
+/*rotate style end*/
+
+
+/*box style start*/
+div.cs-skin-boxes {
+	background: transparent;
+	font-size: 1.25em;
+	font-weight: 700;
+	max-width: 600px;
+	z-index: 2000;
+	color: #524e4f;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-boxes { font-size: 1em; }
+}
+
+.cs-skin-boxes > span {
+	background: #fff;
+	border: 4px solid #524e4f;
+}
+
+.cs-skin-boxes > span::after,
+.cs-skin-boxes.cs-active > span::after {
+	font-family: 'icomoon';
+	top: auto;
+	-webkit-transform: none;
+	transform: none;
+	content: '\e014';
+}
+
+.cs-skin-boxes .cs-options {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	background: #fffed8;
+	font-size: 75%;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+	transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.cs-skin-boxes.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.cs-skin-boxes .cs-options ul {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+.cs-skin-boxes .cs-options li {
+	width: 29%;
+	height: 18%;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	border-radius: 16px;
+	overflow: hidden;
+	opacity: 0;
+	border: 10px solid transparent;
+	background-clip: padding-box;
+	-webkit-transform: scale3d(0.8,0.8,1);
+	transform: scale3d(0.8,0.8,1);
+	box-shadow: inset 0 -6em 0 -2em #fff;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-boxes .cs-options li { box-shadow: none; border-width: 3px; border-radius: 8px;}
+}
+
+.cs-skin-boxes.cs-active .cs-options li {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(2) {
+	-webkit-transition-delay: 0.01s;
+	transition-delay: 0.01s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(3) {
+	-webkit-transition-delay: 0.02s;
+	transition-delay: 0.02s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(4) {
+	-webkit-transition-delay: 0.03s;
+	transition-delay: 0.03s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(5) {
+	-webkit-transition-delay: 0.04s;
+	transition-delay: 0.04s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(6) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(7) {
+	-webkit-transition-delay: 0.06s;
+	transition-delay: 0.06s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(8) {
+	-webkit-transition-delay: 0.07s;
+	transition-delay: 0.07s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(9) {
+	-webkit-transition-delay: 0.08s;
+	transition-delay: 0.08s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(10) {
+	-webkit-transition-delay: 0.09s;
+	transition-delay: 0.09s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(11) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(12) {
+	-webkit-transition-delay: 0.11s;
+	transition-delay: 0.11s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(13) {
+	-webkit-transition-delay: 0.12s;
+	transition-delay: 0.12s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(14) {
+	-webkit-transition-delay: 0.13s;
+	transition-delay: 0.13s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(15) {
+	-webkit-transition-delay: 0.14s;
+	transition-delay: 0.14s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(16) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(17) {
+	-webkit-transition-delay: 0.16s;
+	transition-delay: 0.16s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(18) {
+	-webkit-transition-delay: 0.17s;
+	transition-delay: 0.17s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(19) {
+	-webkit-transition-delay: 0.18s;
+	transition-delay: 0.18s;
+}
+
+.cs-skin-boxes.cs-active .cs-options li:nth-child(20) {
+	-webkit-transition-delay: 0.19s;
+	transition-delay: 0.19s;
+}
+
+.cs-skin-boxes .cs-options li.cs-selected::after {
+	font-family: 'icomoon';
+	content: '\e00d';
+	color: #fff;
+	position: absolute;
+	font-size: 2em;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
+	transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
+}
+
+.cs-skin-boxes .cs-options li.cs-selected span::after {
+	content: '';
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-boxes .cs-options li.cs-selected::after { 
+		-webkit-transform: translate3d(-50%,-50%,0);
+		transform: translate3d(-50%,-50%,0);
+	}
+}
+
+.cs-skin-boxes .cs-options li.color-588c75 {
+	background-color: #588c75;
+}
+
+.cs-skin-boxes .cs-options li.color-b0c47f {
+	background-color: #b0c47f;
+}
+
+.cs-skin-boxes .cs-options li.color-f3e395 {
+	background-color: #f3e395;
+}
+
+.cs-skin-boxes .cs-options li.color-f3ae73 {
+	background-color: #f3ae73;
+}
+
+.cs-skin-boxes .cs-options li.color-da645a {
+	background-color: #da645a;
+}
+
+.cs-skin-boxes .cs-options li.color-79a38f {
+	background-color: #79a38f;
+}
+
+.cs-skin-boxes .cs-options li.color-c1d099 {
+	background-color: #c1d099;
+}
+
+.cs-skin-boxes .cs-options li.color-f5eaaa {
+	background-color: #f5eaaa;
+}
+
+.cs-skin-boxes .cs-options li.color-f5be8f {
+	background-color: #f5be8f;
+}
+
+.cs-skin-boxes .cs-options li.color-e1837b {
+	background-color: #e1837b;
+}
+
+.cs-skin-boxes .cs-options li.color-9bbaab {
+	background-color: #9bbaab;
+}
+
+.cs-skin-boxes .cs-options li.color-d1dcb2 {
+	background-color: #d1dcb2;
+}
+
+.cs-skin-boxes .cs-options li.color-f9eec0 {
+	background-color: #f9eec0;
+}
+
+.cs-skin-boxes .cs-options li.color-f7cda9 {
+	background-color: #f7cda9;
+}
+
+.cs-skin-boxes .cs-options li.color-e8a19b {
+	background-color: #e8a19b;
+}
+
+.cs-skin-boxes .cs-options li.color-bdd1c8 {
+	background-color: #bdd1c8;
+}
+
+.cs-skin-boxes .cs-options li.color-e1e7cd {
+	background-color: #e1e7cd;
+}
+
+.cs-skin-boxes .cs-options li.color-faf4d4 {
+	background-color: #faf4d4;
+}
+
+.cs-skin-boxes .cs-options li.color-fbdfc9 {
+	background-color: #fbdfc9;
+}
+
+.cs-skin-boxes .cs-options li.color-f1c1bd {
+	background-color: #f1c1bd;
+}
+
+.cs-skin-boxes .cs-options span {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	line-height: 2em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-boxes .cs-options span { display: none; }
+}
+
+.cs-skin-boxes .cs-options li span:hover,
+.cs-skin-boxes li.cs-focus span,
+.cs-skin-boxes li.cs-selected span {
+	color: #333;
+}
+/*box style end*/
+
+
+
+/*circular style start*/
+div.cs-skin-circular {
+	background: transparent;
+	font-size: 2em;
+	font-weight: 700;
+	width: auto;
+}
+
+.cs-skin-circular > span {
+	background: transparent;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	padding: 0;
+	text-indent: 100%;
+	box-shadow: inset 0 0 0 5px #fefef8;
+	border-radius: 50%;
+	-webkit-transition: -webkit-transform 0.2s ease-out;
+	transition: transform 0.2s ease-out;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-circular > span { width: 80px; height: 80px; }
+}
+
+.cs-skin-circular > span::after {
+	font-family: 'icomoon';
+	content: '\e00f';
+	right: 0;
+	width: 100%;
+	text-indent: 0;
+}
+
+.cs-skin-circular.cs-active > span::after {
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.cs-skin-circular > span[style]::after {
+	content:'';
+}
+
+.cs-skin-circular .cs-selected span::after {
+	content: '';
+}
+
+.cs-skin-circular.cs-active > span {
+	-webkit-transform: scale3d(0.75,0.75,1);
+	transform: scale3d(0.75,0.75,1);
+}
+
+.cs-skin-circular .cs-options {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	color: #415c71;
+	background: transparent;
+	overflow: visible;
+	font-size: 50%;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+	transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.cs-skin-circular.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.cs-skin-circular .cs-options ul,
+.cs-skin-circular .cs-options li  {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.cs-skin-circular .cs-options li {
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	border-radius: 50%;
+	opacity: 0;
+	cursor: pointer;
+	pointer-events: auto;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.1s;
+	transition: transform 0.3s, opacity 0.1s;
+}
+
+.cs-skin-circular.cs-active .cs-options li {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.cs-skin-circular.cs-active .cs-options li:hover {
+	opacity: 0.7;
+}
+
+.cs-skin-circular .cs-options li:first-child { background-image: url(../images/1.png); }
+.cs-skin-circular .cs-options li:nth-child(2) { background-image: url(../images/2.png); }
+.cs-skin-circular .cs-options li:nth-child(3) { background-image: url(../images/3.png); }
+.cs-skin-circular .cs-options li:nth-child(4) { background-image: url(../images/4.png); }
+.cs-skin-circular .cs-options li:nth-child(5) { background-image: url(../images/5.png); }
+.cs-skin-circular .cs-options li:nth-child(6) { background-image: url(../images/6.png); }
+.cs-skin-circular .cs-options li:nth-child(7) { background-image: url(../images/7.png); }
+.cs-skin-circular .cs-options li:nth-child(8) { background-image: url(../images/8.png); }
+
+.cs-skin-circular.cs-active .cs-options li:first-child {
+	-webkit-transform: translate3d(0, -160px, 0);
+	transform: translate3d(0, -160px, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(2) {
+	-webkit-transform: translate3d(113.14px, -113.14px, 0);
+	transform: translate3d(113.14px, -113.14px, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(3) {
+	-webkit-transform: translate3d(160px, 0, 0);
+	transform: translate3d(160px, 0, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(4) {
+	-webkit-transform: translate3d(113.14px, 113.14px, 0);
+	transform: translate3d(113.14px, 113.14px, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(5) {
+	-webkit-transform: translate3d(0, 160px, 0);
+	transform: translate3d(0, 160px, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(6) {
+	-webkit-transform: translate3d(-113.14px, 113.14px, 0);
+	transform: translate3d(-113.14px, 113.14px, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(7) {
+	-webkit-transform: translate3d(-160px, 0, 0);
+	transform: translate3d(-160px, 0, 0);
+}
+
+.cs-skin-circular.cs-active .cs-options li:nth-child(8) {
+	-webkit-transform: translate3d(-113.14px, -113.14px, 0);
+	transform: translate3d(-113.14px, -113.14px, 0);
+}
+
+.cs-skin-circular .cs-options li span {
+	display: none;
+}
+
+.cs-skin-circular .cs-options li.cs-focus {
+	background-color: transparent;
+	opacity: 0.7;
+}
+
+/*circular style end*/

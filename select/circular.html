@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="maximum-dpr=2" name="flexible" />
+    <title>circular-select</title>
+    <script src="../global/zepto.min.js"></script>
+    <script src="../global/base.js"></script>
+    <link rel="stylesheet" type="text/css" href="../global/reset.css">
+    <link rel="stylesheet" type="text/css" href="./select.css">
+    <style type="text/css">
+        body{
+            background-color: #f8b62c;
+            height: 18rem;
+        }
+        .container{
+            width: 100%;
+            position: relative;
+        }
+        .container h2{
+            position: absolute;
+            top: 1rem;
+            height: 1rem;
+            width: 100%;
+            text-align: center;
+            line-height: 1rem;
+            background-color: #fff;
+        }
+        section{
+            position: absolute;
+            top: 6.8rem;
+            width: 8.5rem;
+            left: 0.75rem;
+        }
+        div.cs-select{
+            width: 8.5rem;
+            max-width: 100px;
+            margin-left: 3.5rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>circular-select下拉选择效果</h2>
+        <section>
+            <select class="cs-select cs-skin-circular">
+                <option value="" disabled selected>Select an activity</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </section>
+    </div>
+    <script src="./classie.js"></script>
+    <script src="./selectFx.js"></script>
+    <script>
+        (function() {
+            [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {    
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function(val){
+                        var img = document.createElement('img');
+                        img.src = '../images/'+val+'.png';
+                        img.onload = function() {
+                            document.querySelector('span.cs-placeholder').style.backgroundImage = 'url(../images/'+val+'.png)';
+                        };
+                    }
+                });
+            } );
+        })();
+    </script>
+</body>
+</html>
+

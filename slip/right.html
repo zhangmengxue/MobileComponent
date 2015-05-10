@@ -49,6 +49,10 @@
         .main li{
             margin: 0.27rem auto; 
         }
+        .main li img{
+            width: 9.46rem;
+            height: 2.7rem;
+        }
 
     </style>
     <link rel="stylesheet" type="text/css" href="./slip.css">
@@ -78,9 +82,11 @@
         $('.button').on('tap',function(e){
             //alert('tap');
             $('.main').addClass('slip-right');
+            $('.button').css('display','none');
         });
         $('ul').on('tap',function(e){
             $('.main').removeClass('slip-right');
+             $('.button').css('display','block');
         });
     </script>
 </body>

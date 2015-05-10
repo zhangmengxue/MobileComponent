@@ -32,23 +32,15 @@
             overflow-x: hidden;
             overflow-y: scroll;
             list-style: none;
-
-            -webkit-perspective: 400px;
-               -moz-perspective: 400px;
-                -ms-perspective: 400px;
-                 -o-perspective: 400px;
-                    perspective: 400px;
         }
         li{
             position: relative;
             margin:0.27rem auto;
             z-index: 2;
-
-            -webkit-transform: translateZ(0px);
-               -moz-transform: translateZ(0px);
-                -ms-transform: translateZ(0px);
-                 -o-transform: translateZ(0px);
-                    transform: translateZ(0px);
+        }
+        li img{
+            width: 9.46rem;
+            height: 2.7rem;
         }
 
     </style>
@@ -93,7 +85,7 @@
     </div>
     <script type="text/javascript" src="./list.js"></script>
     <script type="text/javascript">
-         stroll.bind( 'ul' );
+         
     </script>
 </body>
 </html>
