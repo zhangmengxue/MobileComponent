@@ -10,7 +10,7 @@ function useType(type){
 	                $item.addClass(type);
 	                //$item.addClass(type).show();
 	           }
-	           if(($item.offset().top) < sTop || ($item.offset().top) > wH + sTop){
+	           if(($item.offset().top) < sTop - 200 || ($item.offset().top) > wH + sTop){
 	           		if($item.hasClass('load')){
 	           			$item.removeClass(type);
 	           		}else{
