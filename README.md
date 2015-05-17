@@ -1,6 +1,6 @@
 # 移动端动效组件库
 
-- [查看demo](https://rawgit.com/zhangmengxue/MobileComponent/master/global/show.html)
+- [可以打开chrome的控制台模拟移动设备查看demo](https://rawgit.com/zhangmengxue/MobileComponent/master/global/show.html)
 
 ### 参考资料：
 - [可伸缩布局方案](https://github.com/amfe/lib.flexible)
